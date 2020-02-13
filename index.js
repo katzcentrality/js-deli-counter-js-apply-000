@@ -1,6 +1,16 @@
-function takeANumber(katzDeliLine, name) {
-katzDeliLine.push(`${name}`);
-return `Welcome, ${name}. You are number ${katzDeliLine.length} in line.`;
+let count = 0;
+
+// 1 is new customer, 0 is no one new 
+function newCustomer(customerStatus) {
+count++;
+return count;
+}
+
+
+function takeANumber(number) {
+count = [];
+katzDeliLine.push(number);
+return `${katzDeliLine.length}`;
 }
 
 function nowServing(katzDeliLine) {
@@ -11,12 +21,12 @@ return 'There is nobody waiting to be served!';
 }}
 
 function currentLine(katzDeliLine) {
-    let line = []
+    let line = [];
     if (katzDeliLine.length === 0) {
       return "The line is currently empty."
     } else {
       for(let i = 0; i < katzDeliLine.length; i++) {
-        line += (i + 1) + ". " + katzDeliLine[i] + ", "
+        line +=  (i + 1) + ". " + katzDeliLine[i] + ", "
       }
       line = line.slice(0, line.length-2)
       return "The line is currently: " + line
